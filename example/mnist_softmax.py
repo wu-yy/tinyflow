@@ -22,6 +22,8 @@ sess.run(tf.initialize_all_variables())
 # get the mnist dataset
 mnist = get_mnist(flatten=True, onehot=True)
 
+print("minist download is completed!")
+
 for i in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
     sess.run(train_step, feed_dict={x: batch_xs, y_:batch_ys})

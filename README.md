@@ -74,6 +74,7 @@ bash install-deps
 yes | bash ./install.sh
 
 ```
+
 - Set up environment variable ```TORCH_HOME``` to root of torch
 - Type ```make```
 - Setup python path to include tinyflow and nnvm

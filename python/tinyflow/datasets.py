@@ -5,6 +5,7 @@ from sklearn.datasets import fetch_mldata
 import pickle as cPickle
 import sys
 import os
+from os.path import dirname
 from subprocess import call
 
 
@@ -26,7 +27,7 @@ class ArrayPacker(object):
 MNISTData = namedtuple("MNISTData", ["train", "test"])
 
 def get_mnist(flatten=False, onehot=False):
-    mnist = fetch_mldata('MNIST original')
+    mnist = fetch_mldata('MNIST original',data_home=os.path.join(dirname(dirname(dirname(__file__))),'example'))
     np.random.seed(1234) # set seed for deterministic ordering
     p = np.random.permutation(mnist.data.shape[0])
     X = mnist.data[p]
