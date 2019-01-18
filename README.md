@@ -65,12 +65,20 @@ Most of TinyFlow's code is self-contained.
 ## Build
 - Install Torch7
   - For OSX User, please install Torch with Lua 5.1 instead of LuaJIT,
-    i.e. ```TORCH_LUA_VERSION=LUA51 ./install.sh```
+    i.e. ```TORCH_LUA_VERSION=LUA51 ./install.sh```  
+ ```bash
+ git clone https://github.com/torch/distro.git ~/torch --recursive
+ 
+```
 - Set up environment variable ```TORCH_HOME``` to root of torch
 - Type ```make```
 - Setup python path to include tinyflow and nnvm
 ```bash
 export PYTHONPATH=${PYTHONPATH}:/path/to/tinyflow/python:/path/to/tinyflow/nnvm/python
+```
+- Setup LD_LIBRARY_PATH 
+```bash
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/path/to/torch/build/exe/luajit-rocks/luajit-2.1"
 ```
 - Try example program ```python example/mnist_softmax.py```
 
