@@ -68,7 +68,11 @@ Most of TinyFlow's code is self-contained.
     i.e. ```TORCH_LUA_VERSION=LUA51 ./install.sh```  
  ```bash
  git clone https://github.com/torch/distro.git ~/torch --recursive
- 
+ sudo su
+export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
+bash install-deps
+yes | bash ./install.sh
+
 ```
 - Set up environment variable ```TORCH_HOME``` to root of torch
 - Type ```make```
